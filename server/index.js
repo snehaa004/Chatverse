@@ -13,8 +13,8 @@ const app= express();
 const server = http.createServer(app);
 
 
-app.use(cors({origin: 
-    'https://chatverse-v1-client.onrender.com', // frontend URL
+app.use(cors({
+    origin: 'https://chatverse-v1-client.onrender.com', // frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }));

@@ -34,7 +34,7 @@ const getUser = (userId) => {
 const setupSocket = (server) => {
 const io = new Server(server, {
     cors: {
-        origin: 'https://chatverse-v1-client.onrender.com/',
+        origin: 'https://chatverse-v1-client.onrender.com',
         methods: ['GET', 'POST'],
         credentials: true
     },
