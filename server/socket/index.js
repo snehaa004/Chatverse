@@ -16,18 +16,9 @@ dotenv.config({ path: path.resolve(__dirname, '../server/.env') });
 
 //for saving prefferedlanguage in db
 import Connection from '../server/database/db.js';
-Connection();
-// console.log("MongoDB URL:", Connection().mongoURL);
-
-//old
-const io = new Server(9000, {
-    cors: {
-        origin: 'http://localhost:3000',
-    },
-})
 
 let users = [];
-
+// console.log("MongoDB URL:", Connection().mongoURL);
 const addUser = (userData, socketId) => {
     !users.some(user => user.sub === userData.sub) && users.push({ ...userData, socketId });
 }
@@ -39,6 +30,18 @@ const removeUser = (socketId) => {
 const getUser = (userId) => {
     return users.find(user => user.sub === userId);
 }
+//old
+const setupSocket = (server) => {
+const io = new Server(9000, {
+    cors: {
+        origin: 'http://localhost:3000',
+    },
+})
+Connection();
+
+
+
+
 
 io.on('connection', (socket) => {
     console.log('user connected')
@@ -97,3 +100,6 @@ io.on('connection', (socket) => {
         io.emit('getUsers', users);
     })
 })
+};
+
+export default setupSocket;
