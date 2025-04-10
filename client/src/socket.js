@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 // ✅ Connect to deployed backend
-const socket = io("https://chatverse-v1.onrender.com", {
+const socket = io("https://chatverse-v1.onrender.com/", {
   transports: ["websocket"], // Forces WebSocket over polling (good for Render)
   withCredentials: true // Needed if server uses credentials or cookies
 });
