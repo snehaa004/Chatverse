@@ -1,7 +1,7 @@
 import { Server } from 'socket.io';
-import user from '../server/model/User.js';
-import User from '../server/model/User.js';
-import translateText from '../server/utils/translationService.js';
+import user from '../model/User.js';
+import User from '../model/User.js';
+import translateText from '../utils/translationService.js';
 
 //To read the .env file
 import mongoose from 'mongoose';
@@ -12,10 +12,10 @@ import { fileURLToPath } from 'url';
 // These lines are needed to get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, '../server/.env') });
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 //for saving prefferedlanguage in db
-import Connection from '../server/database/db.js';
+import Connection from '../database/db.js';
 
 let users = [];
 // console.log("MongoDB URL:", Connection().mongoURL);
