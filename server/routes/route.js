@@ -11,6 +11,10 @@ const route=express.Router();
 
 
 
+route.get('/', (req, res) => {
+  res.send('ChatVerse backend is live 🚀');
+});
+
 route.post('/add',addUser);
 route.get('/users',getUsers);
 
