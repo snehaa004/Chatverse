@@ -1,4 +1,8 @@
 import { io } from 'socket.io-client';
 
-export const socket = io("https://chatverse-v1.onrender.com");
+const socket = io('https://chatverse-v1.onrender.com', {
+  transports: ['websocket'],
+  withCredentials: true,
+});
+
 export default socket;
