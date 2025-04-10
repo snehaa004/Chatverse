@@ -14,7 +14,7 @@ const server = http.createServer(app);
 setupSocket(server); 
 
 app.use(cors({
-    origin: 'https://chatverse-v1-client.onrender.com', // frontend URL
+    origin: "https://chatverse-v1-client.onrender.com", // frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }));
@@ -26,7 +26,7 @@ app.use('/',Route);
 
 
 Connection();
-setupSocket(server); 
+
 
 const PORT =process.env.PORT || 8000;
 
