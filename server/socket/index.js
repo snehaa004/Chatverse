@@ -34,10 +34,10 @@ const getUser = (userId) => {
 const setupSocket = (server) => {
 const io = new Server(9000, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: '*',
     },
 })
-Connection();
+// Connection();
 
 
 
