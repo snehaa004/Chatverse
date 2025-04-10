@@ -32,7 +32,7 @@ const getUser = (userId) => {
 }
 //old
 const setupSocket = (server) => {
-const io = new Server(9000, {
+const io = new Server("https://chatverse-v1.onrender.com/", {
     cors: {
         origin: '*',
     },
