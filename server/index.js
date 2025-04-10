@@ -12,7 +12,12 @@ dotenv.config();
 const app= express();
 const server = http.createServer(app);
 
-app.use(cors());
+
+app.use(cors({origin: 
+    'https://chatverse-v1-client.onrender.com', // frontend URL
+    methods: ['GET', 'POST'],
+    credentials: true
+  }));
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/',Route);
