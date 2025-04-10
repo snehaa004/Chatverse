@@ -11,7 +11,7 @@ dotenv.config();
 
 const app= express();
 const server = http.createServer(app);
-
+setupSocket(server); 
 
 app.use(cors({
     origin: 'https://chatverse-v1-client.onrender.com', // frontend URL

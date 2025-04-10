@@ -4,7 +4,7 @@ import User from '../model/User.js';
 import translateText from '../utils/translationService.js';
 
 //To read the .env file
-import mongoose from 'mongoose';
+
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 //for saving prefferedlanguage in db
-import Connection from '../database/db.js';
+
 
 let users = [];
 // console.log("MongoDB URL:", Connection().mongoURL);
@@ -39,7 +39,7 @@ const io = new Server(server, {
         credentials: true
     },
 })
-// Connection();
+
 
 
 
