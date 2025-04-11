@@ -1,7 +1,4 @@
-import { io } from 'socket.io-client';
+import { io } from "socket.io-client";
 
-const socket = io('https://chatverse-v1.onrender.com', {
-  withCredentials: true,
-});
-
-export default socket;
+const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:5000';
+export const socket = io(URL);  
