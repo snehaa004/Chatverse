@@ -51,6 +51,7 @@ io.on('connection', (socket) => {
 
 
     socket.on("addUser", userData => {
+        console.log("Received addUser:", userData);
         addUser(userData, socket.id);
         io.emit("getUsers", users);
     })
