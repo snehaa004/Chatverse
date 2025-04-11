@@ -15,7 +15,8 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 //for saving prefferedlanguage in db
-
+import Connection from '../server/database/db.js';
+Connection();
 
 let users = [];
 // console.log("MongoDB URL:", Connection().mongoURL);
